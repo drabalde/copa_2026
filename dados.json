@@ -1,0 +1,60 @@
+{
+  "valorPorParticipante": 10,
+  "participantesPagos": 42,
+
+  "ranking": [
+    {
+      "nome": "Diego",
+      "pontos": 38,
+      "campeao": "Brasil",
+      "artilheiro": "Vini Jr",
+      "goleiro": "Alisson"
+    },
+
+    {
+      "nome": "João",
+      "pontos": 34,
+      "campeao": "França",
+      "artilheiro": "Mbappé",
+      "goleiro": "Maignan"
+    },
+
+    {
+      "nome": "Carlos",
+      "pontos": 29,
+      "campeao": "Argentina",
+      "artilheiro": "Messi",
+      "goleiro": "Dibu Martínez"
+    }
+  ],
+
+  "jogosBrasil": [
+
+    {
+      "fase": "Primeira fase",
+      "jogo": "Brasil x Sérvia",
+      "resultado": "2 x 0",
+      "acertadores": [
+        "Diego",
+        "Marcos"
+      ]
+    },
+
+    {
+      "fase": "Primeira fase",
+      "jogo": "Brasil x Suíça",
+      "resultado": "1 x 0",
+      "acertadores": [
+        "João"
+      ]
+    },
+
+    {
+      "fase": "Primeira fase",
+      "jogo": "Brasil x Camarões",
+      "resultado": "Palpites abertos",
+      "acertadores": []
+    }
+
+  ]
+}

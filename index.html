@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bolão da Copa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#08111f;
+      color:white;
+    }
+
+    header{
+      position:relative;
+      height:420px;
+      overflow:hidden;
+    }
+
+    .banner{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(0.6);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(8,17,31,1));
+    }
+
+    .hero{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      font-weight:800;
+      color:#fff;
+      text-shadow:0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero p{
+      margin-top:10px;
+      font-size:1.2rem;
+      color:#f5f5f5;
+    }
+
+    .container{
+      width:95%;
+      max-width:1400px;
+      margin:auto;
+      margin-top:-60px;
+      position:relative;
+      z-index:2;
+    }
+
+    .top-cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:30px;
+    }
+
+    .card{
+      background:#111c2d;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .card h3{
+      font-size:0.95rem;
+      color:#a5b4c7;
+      margin-bottom:10px;
+    }
+
+    .card .value{
+      font-size:2rem;
+      font-weight:800;
+      color:#fff;
+    }
+
+    .highlight{
+      background:linear-gradient(135deg,#1faa59,#f1c40f);
+      color:#08111f;
+    }
+
+    .highlight h3,
+    .highlight .value{
+      color:#08111f;
+    }
+
+    .section{
+      margin-bottom:30px;
+    }
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+
+    .section-title h2{
+      font-size:2rem;
+      font-weight:800;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:20px;
+      background:#111c2d;
+    }
+
+    th{
+      background:#18263d;
+      color:#dce7f7;
+      padding:18px;
+      text-align:left;
+      font-size:0.9rem;
+    }
+
+    td{
+      padding:18px;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    tr:hover{
+      background:#162236;
+    }
+
+    .rank{
+      font-weight:800;
+      font-size:1.2rem;
+      color:#f1c40f;
+    }
+
+    .games{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .game-card{
+      background:#111c2d;
+      border-radius:24px;
+      padding:25px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .fase{
+      color:#8ea3c0;
+      font-size:0.9rem;
+      margin-bottom:8px;
+    }
+
+    .jogo{
+      font-size:1.7rem;
+      font-weight:800;
+    }
+
+    .resultado{
+      margin-top:20px;
+      background:#18263d;
+      padding:15px;
+      border-radius:16px;
+    }
+
+    .resultado span{
+      display:block;
+      color:#8ea3c0;
+      font-size:0.9rem;
+      margin-bottom:5px;
+    }
+
+    .resultado strong{
+      font-size:2rem;
+    }
+
+    .acertadores{
+      margin-top:20px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#f1c40f22;
+      color:#ffe066;
+      padding:8px 14px;
+      border-radius:999px;
+      margin-right:8px;
+      margin-top:8px;
+      font-size:0.9rem;
+    }
+
+    .rules{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .rule-card{
+      background:#111c2d;
+      border-radius:24px;
+      padding:25px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .rule-card h3{
+      margin-bottom:15px;
+      font-size:1.2rem;
+    }
+
+    .rule-card ul{
+      list-style:none;
+    }
+
+    .rule-card li{
+      margin-bottom:10px;
+      color:#cbd5e1;
+    }
+
+    footer{
+      margin-top:50px;
+      padding:30px;
+      text-align:center;
+      color:#8ea3c0;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+
+      table{
+        display:block;
+        overflow-x:auto;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <img src="banner.png" class="banner">
+
+  <div class="overlay"></div>
+
+  <div class="hero">
+    <h1>Bolão da Copa</h1>
+    <p>Palpite, torça e concorra!</p>
+  </div>
+
+</header>
+
+<div class="container">
+
+  <div class="top-cards">
+
+    <div class="card highlight">
+      <h3>Prêmio Principal</h3>
+      <div class="value">R$ 252</div>
+    </div>
+
+    <div class="card">
+      <h3>Acertou Campeão</h3>
+      <div class="value">R$ 63</div>
+    </div>
+
+    <div class="card">
+      <h3>Acertou Artilheiro</h3>
+      <div class="value">R$ 42</div>
+    </div>
+
+    <div class="card">
+      <h3>Acertou Goleiro</h3>
+      <div class="value">R$ 42</div>
+    </div>
+
+    <div class="card">
+      <h3>Participantes</h3>
+      <div class="value">42</div>
+    </div>
+
+  </div>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>🏆 Ranking Geral</h2>
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Pontos</th>
+          <th>Campeão</th>
+          <th>Artilheiro</th>
+          <th>Goleiro</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td class="rank">1</td>
+          <td>Diego</td>
+          <td>38</td>
+          <td>Brasil</td>
+          <td>Vini Jr</td>
+          <td>Alisson</td>
+        </tr>
+
+        <tr>
+          <td class="rank">2</td>
+          <td>João</td>
+          <td>34</td>
+          <td>França</td>
+          <td>Mbappé</td>
+          <td>Maignan</td>
+        </tr>
+
+        <tr>
+          <td class="rank">3</td>
+          <td>Carlos</td>
+          <td>29</td>
+          <td>Argentina</td>
+          <td>Messi</td>
+          <td>Dibu</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>🇧🇷 Jogos do Brasil</h2>
+    </div>
+
+    <div class="games">
+
+      <div class="game-card">
+
+        <div class="fase">Primeira fase</div>
+
+        <div class="jogo">
+          Brasil x Sérvia
+        </div>
+
+        <div class="resultado">
+          <span>Resultado</span>
+          <strong>2 x 0</strong>
+        </div>
+
+        <div class="acertadores">
+          <strong>Acertadores:</strong><br>
+
+          <span class="tag">Diego</span>
+          <span class="tag">Marcos</span>
+
+        </div>
+
+      </div>
+
+      <div class="game-card">
+
+        <div class="fase">Primeira fase</div>
+
+        <div class="jogo">
+          Brasil x Suíça
+        </div>
+
+        <div class="resultado">
+          <span>Resultado</span>
+          <strong>1 x 0</strong>
+        </div>
+
+        <div class="acertadores">
+          <strong>Acertadores:</strong><br>
+
+          <span class="tag">João</span>
+
+        </div>
+
+      </div>
+
+      <div class="game-card">
+
+        <div class="fase">Primeira fase</div>
+
+        <div class="jogo">
+          Brasil x Camarões
+        </div>
+
+        <div class="resultado">
+          <span>Status</span>
+          <strong>Palpites Abertos</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>📋 Regras</h2>
+    </div>
+
+    <div class="rules">
+
+      <div class="rule-card">
+
+        <h3>Pontuação Jogos</h3>
+
+        <ul>
+          <li>• Placar exato = 10 pts</li>
+          <li>• Vencedor + saldo = 6 pts</li>
+          <li>• Apenas vencedor = 3 pts</li>
+        </ul>
+
+      </div>
+
+      <div class="rule-card">
+
+        <h3>Palpites Gerais</h3>
+
+        <ul>
+          <li>• Campeão correto = 10 pts</li>
+          <li>• Artilheiro correto = 10 pts</li>
+          <li>• Melhor goleiro = 10 pts</li>
+        </ul>
+
+      </div>
+
+      <div class="rule-card">
+
+        <h3>Desempate</h3>
+
+        <ul>
+          <li>1. Mais placares exatos</li>
+          <li>2. Acertou campeão</li>
+          <li>3. Sorteio</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  Bolão da Copa • Atualizado automaticamente pelo GitHub
+</footer>
+
+</body>
+</html>
