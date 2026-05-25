@@ -1,27 +1,27 @@
 {
-  "valorPorParticipante": 10,
-  "participantesPagos": 42,
+  "valorPorParticipante": 20,
+  "participantesPagos": 2,
 
   "ranking": [
     {
       "nome": "Diego",
-      "pontos": 38,
+      "pontos": 0,
       "campeao": "Brasil",
       "artilheiro": "Vini Jr",
       "goleiro": "Alisson"
     },
 
     {
-      "nome": "João",
-      "pontos": 34,
+      "nome": "Luísa",
+      "pontos": 0,
       "campeao": "França",
       "artilheiro": "Mbappé",
       "goleiro": "Maignan"
     },
 
     {
-      "nome": "Carlos",
-      "pontos": 29,
+      "nome": "Heitor",
+      "pontos": 0,
       "campeao": "Argentina",
       "artilheiro": "Messi",
       "goleiro": "Dibu Martínez"
@@ -31,27 +31,26 @@
   "jogosBrasil": [
 
     {
-      "fase": "Primeira fase",
-      "jogo": "Brasil x Sérvia",
-      "resultado": "2 x 0",
+      "fase": "Primeira fase - 13/06 às 19h",
+      "jogo": "Brasil x Marrocos",
+      "resultado": "Palpites abertos",
       "acertadores": [
-        "Diego",
-        "Marcos"
+        "A definir"
       ]
     },
 
     {
-      "fase": "Primeira fase",
-      "jogo": "Brasil x Suíça",
-      "resultado": "1 x 0",
+      "fase": "Primeira fase - 19/06 às 22h",
+      "jogo": "Brasil x Haiti",
+      "resultado": "Palpites abertos",
       "acertadores": [
-        "João"
+        "A definir"
       ]
     },
 
     {
-      "fase": "Primeira fase",
-      "jogo": "Brasil x Camarões",
+      "fase": "Primeira fase - 24/06 às 19h",
+      "jogo": "Brasil x Escócia",
       "resultado": "Palpites abertos",
       "acertadores": []
     }
