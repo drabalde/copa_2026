@@ -19,7 +19,7 @@ body{
 
 header{
   position:relative;
-  height:560px;
+  height:680px;
   overflow:hidden;
 }
 
@@ -27,16 +27,19 @@ header{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 20%;
-  filter:brightness(0.98);
+  object-position:center center;
+  filter:brightness(1.12);
 }
 
 .overlay{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(8, 17, 31, 0.321)),
-    linear-gradient(120deg, rgba(0,150,50,0.3), rgba(255,215,0,0.1));
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.01),
+      rgba(8,17,31,0.22)
+    );
 }
 
 .hero{
@@ -321,39 +324,7 @@ footer{
 
 }
 
-@media(max-width:768px){
 
-  header{
-    height:340px;
-  }
-
-  .hero h1{
-    font-size:2.3rem;
-  }
-
-  .hero p{
-    font-size:1rem;
-  }
-
-  .section-title h2{
-    font-size:1.5rem;
-  }
-
-  table{
-    display:block;
-    overflow-x:auto;
-    white-space:nowrap;
-  }
-
-  .jogo{
-    font-size:1.4rem;
-  }
-
-  .resultado strong{
-    font-size:1.6rem;
-  }
-
-}
 
 @media(max-width:480px){
 
@@ -449,6 +420,10 @@ footer{
 }
 
 @media(max-width:768px){
+  header{
+    height:520px;
+  }
+
   .payment-card{
     grid-template-columns:1fr;
   }
@@ -456,9 +431,4 @@ footer{
   .payment-card h2{
     font-size:1.5rem;
   }
-
-   header{
-    height:320px;
-  }
-
 }
