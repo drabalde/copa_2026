@@ -19,7 +19,7 @@ body{
 
 header{
   position:relative;
-  height:680px;
+  height:560px;
   overflow:hidden;
 }
 
@@ -37,8 +37,8 @@ header{
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.01),
-      rgba(13, 27, 49, 0.041)
+      rgba(0, 0, 0, 0.06),
+      rgba(13, 27, 49, 0.096)
     );
 }
 
