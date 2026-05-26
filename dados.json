@@ -4,27 +4,27 @@
 
   "ranking": [
     {
-      "nome": "Diego",
+      "nome": "N/A",
       "pontos": 0,
-      "campeao": "Brasil",
-      "artilheiro": "Vini Jr",
-      "goleiro": "Alisson"
+      "campeao": "N/A",
+      "artilheiro": "N/A",
+      "goleiro": "N/A"
     },
 
     {
-      "nome": "Luísa",
+      "nome": "N/A",
       "pontos": 0,
-      "campeao": "França",
-      "artilheiro": "Mbappé",
-      "goleiro": "Maignan"
+      "campeao": "N/A",
+      "artilheiro": "N/A",
+      "goleiro": "N/A"
     },
 
     {
-      "nome": "Heitor",
+      "nome": "N/A",
       "pontos": 0,
-      "campeao": "Argentina",
-      "artilheiro": "Messi",
-      "goleiro": "Dibu Martínez"
+      "campeao": "N/A",
+      "artilheiro": "N/A",
+      "goleiro": "N/A"
     }
   ],
 
@@ -43,9 +43,7 @@
       "fase": "Primeira fase - 19/06 às 22h",
       "jogo": "Brasil x Haiti",
       "resultado": "Palpites abertos",
-      "acertadores": [
-        "A definir"
-      ]
+      "acertadores": []       
     },
 
     {
