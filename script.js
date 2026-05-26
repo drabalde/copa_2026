@@ -10,7 +10,7 @@ fetch("dados.json")
     const total = valorPorParticipante * participantes;
 
     const premioPrincipal = total * 0.60;
-    const premioCampeao = total * 0.15;
+    const premioCampeao = total * 0.20;
     const premioArtilheiro = total * 0.10;
     const premioGoleiro = total * 0.10;
 
