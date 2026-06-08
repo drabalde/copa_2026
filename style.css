@@ -476,3 +476,56 @@ footer{
   }
 
 }
+
+.countdown-section{
+  background:linear-gradient(135deg,#0f1b2d,#123c2c);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.countdown-section h2{
+  margin-bottom:20px;
+  font-size:2rem;
+  text-align:center;
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.countdown div{
+  background:#08111f;
+  border-radius:22px;
+  padding:22px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.countdown span{
+  display:block;
+  font-size:2.5rem;
+  font-weight:800;
+  color:#f1c40f;
+}
+
+.countdown small{
+  color:#cbd5e1;
+}
+
+@media(max-width:768px){
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .countdown-section h2{
+    font-size:1.4rem;
+  }
+
+  .countdown span{
+    font-size:2rem;
+  }
+}

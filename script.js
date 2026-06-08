@@ -168,3 +168,30 @@ if (palpiteForm) {
     palpiteForm.reset();
   });
 }
+
+function atualizarContagem() {
+  const inicioCopa = new Date("2026-06-11T16:00:00-03:00").getTime();
+  const agora = new Date().getTime();
+  const distancia = inicioCopa - agora;
+
+  if (distancia <= 0) {
+    document.getElementById("days").innerText = "00";
+    document.getElementById("hours").innerText = "00";
+    document.getElementById("minutes").innerText = "00";
+    document.getElementById("seconds").innerText = "00";
+    return;
+  }
+
+  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((distancia / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((distancia / (1000 * 60)) % 60);
+  const segundos = Math.floor((distancia / 1000) % 60);
+
+  document.getElementById("days").innerText = String(dias).padStart(2, "0");
+  document.getElementById("hours").innerText = String(horas).padStart(2, "0");
+  document.getElementById("minutes").innerText = String(minutos).padStart(2, "0");
+  document.getElementById("seconds").innerText = String(segundos).padStart(2, "0");
+}
+
+setInterval(atualizarContagem, 1000);
+atualizarContagem();
