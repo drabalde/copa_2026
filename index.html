@@ -58,16 +58,34 @@
   <div class="payment-card">
 
     <div>
-      <h2>📝 Faça seu palpite</h2>
-      <p>Preencha o formulário com seus palpites e depois faça o pagamento via Pix.</p>
+      <h2>📝 Enviar Palpite</h2>
+      <p>Preencha seus palpites abaixo para participar do bolão.</p>
 
-      <a class="form-button" href="https://forms.gle/CxPQyDAx6nEfzAzT6" target="_blank">
-        Abrir formulário de palpites
-      </a>
+      <form id="palpiteForm">
+
+        <input id="nome" type="text" placeholder="Nome" required>
+        <input id="email" type="email" placeholder="E-mail" required>
+        <input id="telefone" type="text" placeholder="Telefone" required>
+
+        <input id="campeao" type="text" placeholder="Campeão da Copa" required>
+        <input id="vice" type="text" placeholder="Vice-campeão" required>
+        <input id="artilheiro" type="text" placeholder="Artilheiro" required>
+        <input id="goleiro" type="text" placeholder="Goleiro menos vazado" required>
+
+        <input id="brasilMarrocos" type="text" placeholder="Brasil x Marrocos. Ex: 3 x 1" required>
+        <input id="brasilHaiti" type="text" placeholder="Brasil x Haiti. Ex: 4 x 0" required>
+        <input id="escociaBrasil" type="text" placeholder="Escócia x Brasil. Ex: 0 x 2" required>
+
+        <button type="submit" class="form-button">Enviar palpite</button>
+
+        <p id="formMsg" class="pix-warning"></p>
+
+      </form>
     </div>
 
     <div class="pix-box">
       <h3>💸 Pix do Bolão</h3>
+
       <p class="pix-label">Chave Pix:</p>
       <div class="pix-key">16997287733</div>
 

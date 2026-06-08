@@ -409,3 +409,34 @@ footer{
     font-size:1.5rem;
   }
 }
+
+#palpiteForm{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:18px;
+}
+
+#palpiteForm input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:#08111f;
+  color:white;
+  font-family:'Poppins',sans-serif;
+  outline:none;
+}
+
+#palpiteForm input::placeholder{
+  color:#8ea3c0;
+}
+
+#palpiteForm input:focus{
+  border-color:#f1c40f;
+}
+
+#palpiteForm button{
+  border:none;
+  cursor:pointer;
+}

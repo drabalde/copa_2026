@@ -129,3 +129,42 @@ fetch("dados.json")
     console.error("Erro ao carregar dados:", error);
 
   });
+
+  const FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf60yjepXJCZlNm_utFqVvtkH5EJxs7Zl9kIcrzHi0YUxCuaQ/formResponse";
+
+const palpiteForm = document.getElementById("palpiteForm");
+
+if (palpiteForm) {
+  palpiteForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formMsg = document.getElementById("formMsg");
+    formMsg.innerText = "Enviando palpite...";
+
+    const formData = new FormData();
+
+    formData.append("entry.2005620554", document.getElementById("nome").value);
+    formData.append("entry.1045781291", document.getElementById("email").value);
+    formData.append("entry.1166974658", document.getElementById("telefone").value);
+
+    formData.append("entry.1073835788", document.getElementById("campeao").value);
+    formData.append("entry.652600989", document.getElementById("vice").value);
+    formData.append("entry.423639897", document.getElementById("artilheiro").value);
+    formData.append("entry.1509334487", document.getElementById("goleiro").value);
+
+    formData.append("entry.346244626", document.getElementById("brasilMarrocos").value);
+    formData.append("entry.1227593723", document.getElementById("brasilHaiti").value);
+    formData.append("entry.734359384", document.getElementById("escociaBrasil").value);
+
+    await fetch(FORM_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    });
+
+    formMsg.innerText = "✅ Palpite enviado com sucesso! Agora envie o comprovante do Pix.";
+
+    palpiteForm.reset();
+  });
+}
