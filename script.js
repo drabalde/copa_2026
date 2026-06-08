@@ -145,7 +145,7 @@ if (palpiteForm) {
     const formData = new FormData();
 
     formData.append("entry.2005620554", document.getElementById("nome").value);
-    formData.append("entry.1045781291", document.getElementById("email").value);
+    formData.append("entry.1045781291", "");
     formData.append("entry.1166974658", document.getElementById("telefone").value);
 
     formData.append("entry.1073835788", document.getElementById("campeao").value);

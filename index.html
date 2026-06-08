@@ -63,24 +63,35 @@
 
       <form id="palpiteForm">
 
-        <input id="nome" type="text" placeholder="Nome" required>
-        <input id="email" type="email" placeholder="E-mail" required>
-        <input id="telefone" type="text" placeholder="Telefone" required>
+        <div class="form-grid-2">
+          <input id="nome" type="text" placeholder="Nome" required>
+          <input id="telefone" type="text" placeholder="Telefone" required>
+        </div>
 
-        <input id="campeao" type="text" placeholder="Campeão da Copa" required>
-        <input id="vice" type="text" placeholder="Vice-campeão" required>
-        <input id="artilheiro" type="text" placeholder="Artilheiro" required>
-        <input id="goleiro" type="text" placeholder="Goleiro menos vazado" required>
+        <div class="form-grid-2">
+          <input id="campeao" type="text" placeholder="Campeão" required>
+          <input id="vice" type="text" placeholder="Vice-campeão" required>
+        </div>
 
-        <input id="brasilMarrocos" type="text" placeholder="Brasil x Marrocos. Ex: 3 x 1" required>
-        <input id="brasilHaiti" type="text" placeholder="Brasil x Haiti. Ex: 4 x 0" required>
-        <input id="escociaBrasil" type="text" placeholder="Escócia x Brasil. Ex: 0 x 2" required>
+        <div class="form-grid-2">
+          <input id="artilheiro" type="text" placeholder="Artilheiro" required>
+          <input id="goleiro" type="text" placeholder="Melhor goleiro" required>
+        </div>
 
-        <button type="submit" class="form-button">Enviar palpite</button>
+        <div class="form-grid-3">
+          <input id="brasilMarrocos" type="text" placeholder="Brasil x Marrocos">
+          <input id="brasilHaiti" type="text" placeholder="Brasil x Haiti">
+          <input id="escociaBrasil" type="text" placeholder="Escócia x Brasil">
+        </div>
+
+        <button type="submit" class="form-button">
+          Enviar palpite
+        </button>
 
         <p id="formMsg" class="pix-warning"></p>
 
       </form>
+      
     </div>
 
     <div class="pix-box">
