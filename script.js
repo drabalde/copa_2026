@@ -169,29 +169,83 @@ if (palpiteForm) {
   });
 }
 
-function atualizarContagem() {
-  const inicioCopa = new Date("2026-06-11T16:00:00-03:00").getTime();
-  const agora = new Date().getTime();
-  const distancia = inicioCopa - agora;
+const jogosBrasil = [
+  {
+    titulo: "Brasil x Adversário 1 — 15/06 às 19h",
+    data: "2026-06-15T19:00:00-03:00"
+  },
+  {
+    titulo: "Brasil x Adversário 2 — 21/06 às 16h",
+    data: "2026-06-21T16:00:00-03:00"
+  },
+  {
+    titulo: "Brasil x Adversário 3 — 26/06 às 19h",
+    data: "2026-06-26T19:00:00-03:00"
+  }
+];
 
-  if (distancia <= 0) {
-    document.getElementById("days").innerText = "00";
-    document.getElementById("hours").innerText = "00";
-    document.getElementById("minutes").innerText = "00";
-    document.getElementById("seconds").innerText = "00";
+function buscarProximoJogo() {
+  const agora = new Date();
+
+  return jogosBrasil.find(jogo => {
+    return new Date(jogo.data) > agora;
+  });
+}
+
+function atualizarContador() {
+  const proximoJogo = buscarProximoJogo();
+
+  if (!proximoJogo) {
+    document.getElementById("countdown-title").textContent =
+      "⏳ Aguardando o próximo jogo do Brasil";
+
+    document.getElementById("countdown-subtitle").textContent =
+      "O próximo confronto será atualizado em breve.";
+
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+
     return;
   }
 
-  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((distancia / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((distancia / (1000 * 60)) % 60);
-  const segundos = Math.floor((distancia / 1000) % 60);
+  const agora = new Date();
+  const dataJogo = new Date(proximoJogo.data);
+  const diferenca = dataJogo - agora;
 
-  document.getElementById("days").innerText = String(dias).padStart(2, "0");
-  document.getElementById("hours").innerText = String(horas).padStart(2, "0");
-  document.getElementById("minutes").innerText = String(minutos).padStart(2, "0");
-  document.getElementById("seconds").innerText = String(segundos).padStart(2, "0");
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+  const horas = Math.floor(
+    (diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+
+  const minutos = Math.floor(
+    (diferenca % (1000 * 60 * 60)) / (1000 * 60)
+  );
+
+  const segundos = Math.floor(
+    (diferenca % (1000 * 60)) / 1000
+  );
+
+  document.getElementById("countdown-title").textContent =
+    "⏳ Próximo jogo do Brasil";
+
+  document.getElementById("countdown-subtitle").textContent =
+    proximoJogo.titulo;
+
+  document.getElementById("days").textContent =
+    String(dias).padStart(2, "0");
+
+  document.getElementById("hours").textContent =
+    String(horas).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(minutos).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(segundos).padStart(2, "0");
 }
 
-setInterval(atualizarContagem, 1000);
-atualizarContagem();
+atualizarContador();
+setInterval(atualizarContador, 1000);
