@@ -171,16 +171,16 @@ if (palpiteForm) {
 
 const jogosBrasil = [
   {
-    titulo: "Brasil x Adversário 1 — 15/06 às 19h",
-    data: "2026-06-15T19:00:00-03:00"
+    titulo: "Brasil x Marrocos — 13/06 às 19h",
+    data: "2026-06-13T19:00:00-03:00"
   },
   {
-    titulo: "Brasil x Adversário 2 — 21/06 às 16h",
-    data: "2026-06-21T16:00:00-03:00"
+    titulo: "Brasil x Haiti — 19/06 às 22h",
+    data: "2026-06-19T22:00:00-03:00"
   },
   {
-    titulo: "Brasil x Adversário 3 — 26/06 às 19h",
-    data: "2026-06-26T19:00:00-03:00"
+    titulo: "Escócia x Brasil — 24/06 às 19h",
+    data: "2026-06-24T19:00:00-03:00"
   }
 ];
 
