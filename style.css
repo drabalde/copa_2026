@@ -529,3 +529,104 @@ footer{
     font-size:2rem;
   }
 }
+
+.ranking-section {
+  margin-top: 30px;
+}
+
+.ultimo-jogo-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.ultimo-jogo-titulo {
+  font-weight: 700;
+  color: #146b35;
+  margin-bottom: 6px;
+}
+
+.ultimo-jogo-times {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ultimo-jogo-placar {
+  font-size: 1.4rem;
+  margin-top: 6px;
+}
+
+.ultimo-jogo-status {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.ranking-table-wrapper {
+  overflow-x: auto;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.ranking-table th {
+  background: #146b35;
+  color: white;
+  font-weight: 700;
+}
+
+.ranking-table td:nth-child(2) {
+  text-align: left;
+  font-weight: 600;
+}
+
+.ranking-table .top-1 {
+  background: #fff6cc;
+  font-weight: 700;
+}
+
+.ranking-table .top-2 {
+  background: #f1f1f1;
+  font-weight: 700;
+}
+
+.ranking-table .top-3 {
+  background: #f4dfc2;
+  font-weight: 700;
+}
+
+.ranking-update {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .ranking-table th,
+  .ranking-table td {
+    padding: 9px 7px;
+    font-size: 0.85rem;
+  }
+
+  .ranking-table th:nth-child(4),
+  .ranking-table td:nth-child(4) {
+    display: none;
+  }
+}

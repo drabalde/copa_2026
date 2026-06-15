@@ -249,3 +249,101 @@ function atualizarContador() {
 
 atualizarContador();
 setInterval(atualizarContador, 1000);
+
+const BOLAO_API_URL = "https://script.google.com/macros/s/AKfycbyda6_wl4SnmNvy9HC6Eur0xfnTMyXycSYp9Hinlgl7YSCH72phWLZR6UHf1n5y-swLLQ/exec";
+
+async function carregarDadosBolao() {
+  try {
+    const resposta = await fetch(BOLAO_API_URL);
+    const dados = await resposta.json();
+
+    preencherUltimoJogoBrasil(dados.ultimoJogoBrasil);
+    preencherRanking(dados.ranking);
+    preencherAtualizacao(dados.atualizadoEm);
+  } catch (erro) {
+    console.error("Erro ao carregar dados do bolão:", erro);
+
+    const rankingBody = document.getElementById("rankingBody");
+    if (rankingBody) {
+      rankingBody.innerHTML = `
+        <tr>
+          <td colspan="5">Não foi possível carregar o ranking agora.</td>
+        </tr>
+      `;
+    }
+  }
+}
+
+function preencherUltimoJogoBrasil(jogo) {
+  const container = document.getElementById("ultimoJogoBrasil");
+
+  if (!container) return;
+
+  if (!jogo) {
+    container.innerHTML = "Nenhum jogo do Brasil encontrado na planilha.";
+    return;
+  }
+
+  const placarTexto = jogo.placar
+    ? `<strong>${jogo.placar}</strong>`
+    : `<span>Placar ainda não informado</span>`;
+
+  container.innerHTML = `
+    <div class="ultimo-jogo-titulo">🇧🇷 Último jogo do Brasil</div>
+    <div class="ultimo-jogo-times">${jogo.timeCasa} x ${jogo.timeFora}</div>
+    <div class="ultimo-jogo-placar">${placarTexto}</div>
+    <div class="ultimo-jogo-status">${jogo.status || ""}</div>
+  `;
+}
+
+function preencherRanking(ranking) {
+  const rankingBody = document.getElementById("rankingBody");
+
+  if (!rankingBody) return;
+
+  if (!ranking || ranking.length === 0) {
+    rankingBody.innerHTML = `
+      <tr>
+        <td colspan="5">Nenhum participante no ranking ainda.</td>
+      </tr>
+    `;
+    return;
+  }
+
+  rankingBody.innerHTML = "";
+
+  ranking.forEach((item, index) => {
+    const linha = document.createElement("tr");
+
+    if (index === 0) linha.classList.add("top-1");
+    if (index === 1) linha.classList.add("top-2");
+    if (index === 2) linha.classList.add("top-3");
+
+    linha.innerHTML = `
+      <td>${item.posicao}</td>
+      <td>${item.nome}</td>
+      <td>${item.pontos}</td>
+      <td>${item.exatos}</td>
+      <td>${item.palpiteUltimoJogo || "-"}</td>
+    `;
+
+    rankingBody.appendChild(linha);
+  });
+}
+
+function preencherAtualizacao(dataIso) {
+  const elemento = document.getElementById("rankingAtualizadoEm");
+
+  if (!elemento || !dataIso) return;
+
+  const data = new Date(dataIso);
+
+  elemento.textContent = `Atualizado em ${data.toLocaleDateString("pt-BR")} às ${data.toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  })}`;
+}
+
+carregarDadosBolao();
+
+setInterval(carregarDadosBolao, 10 * 60 * 1000);
