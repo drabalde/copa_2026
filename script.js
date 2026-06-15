@@ -324,14 +324,14 @@ function preencherRanking(ranking) {
   linha.innerHTML = `
     <td>${item.posicao}</td>
     <td>${item.nome}</td>
+    <td>${item.pontos}</td>
+    <td>${item.exatos}</td>
+    <td>${item.palpiteUltimoJogo || "-"}</td>
     <td>
       <span class="grupo-badge ${grupoClasse}">
         ${item.grupo || "-"}
       </span>
     </td>
-    <td>${item.pontos}</td>
-    <td>${item.exatos}</td>
-    <td>${item.palpiteUltimoJogo || "-"}</td>
   `;
 
     rankingBody.appendChild(linha);
@@ -361,7 +361,7 @@ function normalizarClasseGrupo(grupo) {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
 
-  if (texto.includes("familia")) return "grupo-familia";
+  if (texto.includes("Pimenta")) return "grupo-familia";
   if (texto.includes("trabalho")) return "grupo-trabalho";
   if (texto.includes("amigos")) return "grupo-amigos";
 
