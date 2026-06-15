@@ -641,3 +641,36 @@ footer{
 .ranking-table td:nth-child(2) {
   text-align: left;
 }
+
+.grupo-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.grupo-familia {
+  background: rgba(255, 215, 0, 0.25);
+  color: #fff8c4;
+  border: 1px solid rgba(255, 215, 0, 0.45);
+}
+
+.grupo-trabalho {
+  background: rgba(0, 123, 255, 0.22);
+  color: #cfe8ff;
+  border: 1px solid rgba(0, 123, 255, 0.45);
+}
+
+.grupo-amigos {
+  background: rgba(0, 200, 120, 0.22);
+  color: #caffdf;
+  border: 1px solid rgba(0, 200, 120, 0.45);
+}
+
+.grupo-outros {
+  background: rgba(255, 255, 255, 0.14);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
