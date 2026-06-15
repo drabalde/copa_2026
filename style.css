@@ -632,3 +632,12 @@ footer{
   padding: 6px 8px;
   line-height: 1.15;
 }
+
+.ranking-table th,
+.ranking-table td {
+  text-align: center;
+}
+
+.ranking-table td:nth-child(2) {
+  text-align: left;
+}

@@ -267,7 +267,7 @@ async function carregarDadosBolao() {
     if (rankingBody) {
       rankingBody.innerHTML = `
         <tr>
-          <td colspan="5">Não foi possível carregar o ranking agora.</td>
+          <td colspan="6">Não foi possível carregar o ranking agora.</td>
         </tr>
       `;
     }
@@ -304,7 +304,7 @@ function preencherRanking(ranking) {
   if (!ranking || ranking.length === 0) {
     rankingBody.innerHTML = `
       <tr>
-        <td colspan="5">Nenhum participante no ranking ainda.</td>
+        <td colspan="6">Nenhum participante no ranking ainda.</td>
       </tr>
     `;
     return;
@@ -324,7 +324,8 @@ function preencherRanking(ranking) {
       <td>${item.nome}</td>
       <td>${item.pontos}</td>
       <td>${item.exatos}</td>
-      <td>${item.palpiteUltimoJogo || "-"}</td>
+      <td>${item.palpiteUltimoJogo || "-"}
+      <td>${item.grupo || "-"}</td>
     `;
 
     rankingBody.appendChild(linha);
