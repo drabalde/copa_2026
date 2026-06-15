@@ -1,4 +1,4 @@
-fetch("dados.json")
+fetch(`dados.json?v=${Date.now()}`, { cache: "no-store" })
   .then(response => response.json())
   .then(data => {
 
