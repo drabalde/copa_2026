@@ -565,6 +565,17 @@ footer{
   opacity: 0.8;
 }
 
+.ranking-section {
+  color: inherit;
+}
+
+.ultimo-jogo-card {
+  background: rgba(255, 255, 255, 0.10);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+}
+
 .ranking-table-wrapper {
   overflow-x: auto;
 }
@@ -572,22 +583,37 @@ footer{
 .ranking-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.ranking-table th,
-.ranking-table td {
-  padding: 12px 10px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
+  background: transparent;
+  color: inherit;
 }
 
 .ranking-table th {
-  background: #146b35;
-  color: white;
+  background: rgba(0, 100, 0, 0.75);
+  color: #fff;
+}
+
+.ranking-table td {
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ranking-table tr:hover td {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.ranking-table .top-1 td {
+  background: rgba(255, 215, 0, 0.22);
+  font-weight: 700;
+}
+
+.ranking-table .top-2 td {
+  background: rgba(192, 192, 192, 0.18);
+  font-weight: 700;
+}
+
+.ranking-table .top-3 td {
+  background: rgba(205, 127, 50, 0.20);
   font-weight: 700;
 }
 
@@ -596,88 +622,7 @@ footer{
   font-weight: 600;
 }
 
-.ranking-table .top-1 {
-  background: #fff6cc;
-  font-weight: 700;
-}
-
-.ranking-table .top-2 {
-  background: #f1f1f1;
-  font-weight: 700;
-}
-
-.ranking-table .top-3 {
-  background: #f4dfc2;
-  font-weight: 700;
-}
-
 .ranking-update {
-  display: block;
-  margin-top: 8px;
-  text-align: right;
+  color: inherit;
   opacity: 0.75;
-}
-
-@media (max-width: 600px) {
-  .ranking-table th,
-  .ranking-table td {
-    padding: 9px 7px;
-    font-size: 0.85rem;
-  }
-
-  .ranking-table th:nth-child(4),
-  .ranking-table td:nth-child(4) {
-    display: none;
-  }
-}
-
-.ranking-section {
-  color: #222;
-}
-
-.ranking-table {
-  color: #222;
-  background: #ffffff;
-}
-
-.ranking-table th {
-  background: #146b35;
-  color: #ffffff;
-}
-
-.ranking-table td {
-  color: #222;
-  background: #ffffff;
-}
-
-.ranking-table tr:hover td {
-  background: #eaf7ef;
-  color: #111;
-}
-
-.ranking-table .top-1 td {
-  background: #fff3b0;
-  color: #111;
-  font-weight: 700;
-}
-
-.ranking-table .top-2 td {
-  background: #eeeeee;
-  color: #111;
-  font-weight: 700;
-}
-
-.ranking-table .top-3 td {
-  background: #f2d2a9;
-  color: #111;
-  font-weight: 700;
-}
-
-.ultimo-jogo-card {
-  color: #222;
-  background: #ffffff;
-}
-
-.ranking-update {
-  color: #333;
 }
