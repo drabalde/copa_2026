@@ -626,3 +626,9 @@ footer{
   color: inherit;
   opacity: 0.75;
 }
+
+.ranking-table th,
+.ranking-table td {
+  padding: 6px 8px;
+  line-height: 1.15;
+}
