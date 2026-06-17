@@ -361,9 +361,9 @@ function normalizarClasseGrupo(grupo) {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
 
-  if (texto.includes("Pimenta")) return "grupo-familia";
-  if (texto.includes("trabalho")) return "grupo-trabalho";
-  if (texto.includes("amigos")) return "grupo-amigos";
+  if (texto.includes("pimenta")) return "grupo-pimenta";
+  if (texto.includes("giv")) return "grupo-giv";
+  if (texto.includes("gsd")) return "grupo-gsd";
 
-  return "grupo-outros";
+  return "grupo-gft";
 }

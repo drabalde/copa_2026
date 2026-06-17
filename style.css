@@ -651,25 +651,25 @@ footer{
   white-space: nowrap;
 }
 
-.grupo-familia {
-  background: rgba(255, 215, 0, 0.25);
+.grupo-pimenta {
+  background: rgba(255, 89, 0, 0.25);
   color: #fff8c4;
   border: 1px solid rgba(255, 215, 0, 0.45);
 }
 
-.grupo-trabalho {
-  background: rgba(0, 123, 255, 0.22);
+.grupo-giv {
+  background: rgba(0, 255, 51, 0.22);
   color: #cfe8ff;
   border: 1px solid rgba(0, 123, 255, 0.45);
 }
 
-.grupo-amigos {
-  background: rgba(0, 200, 120, 0.22);
+.grupo-gsd {
+  background: rgba(0, 63, 200, 0.22);
   color: #caffdf;
   border: 1px solid rgba(0, 200, 120, 0.45);
 }
 
-.grupo-outros {
+.grupo-gft {
   background: rgba(255, 255, 255, 0.14);
   color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.25);
