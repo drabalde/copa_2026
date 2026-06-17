@@ -674,3 +674,8 @@ footer{
   color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
+
+.form-section,
+.palpites-section {
+  display: none;
+}
