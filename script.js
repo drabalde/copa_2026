@@ -192,7 +192,8 @@ function buscarProximoJogo() {
   });
 }
 
-const BOLAO_API_URL = "https://script.google.com/macros/s/hum ele/exec";
+
+const BOLAO_API_URL = "https://script.google.com/macros/s/hum/exec";
 
 async function carregarDadosBolao() {
   try {
