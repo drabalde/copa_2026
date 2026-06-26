@@ -193,7 +193,7 @@ function buscarProximoJogo() {
 }
 
 
-const BOLAO_API_URL = "https://script.google.com/macros/s/AKfycbyda6_wl4SnmNvy9HC6Eur0xfnTMyXycSYp9Hinlgl7YSCH72phWLZR6UHf1n5y-swLLQ/exec";;
+const BOLAO_API_URL = "https://script.google.com/macros/s/AKfycbyda6_wl4SnmNvy9HC6Eur0xfnTMyXycSYp9Hinlgl7YSCH72phWLZR6UHf1n5y-swLLQ/exec";
 
 async function carregarDadosBolao() {
   try {
