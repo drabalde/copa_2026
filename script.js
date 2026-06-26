@@ -380,7 +380,7 @@ const CAMPOS_FORM_16 = {
 const formPalpiteBrasil16 = document.getElementById("formPalpiteBrasil16");
 
 if (formPalpiteBrasil16) {
-  formPalpiteBrasil16.addEventListener("submit", function (event) {
+  formPalpiteBrasil16.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const nome = document.getElementById("nomePalpite16").value.trim();
@@ -399,19 +399,20 @@ if (formPalpiteBrasil16) {
     dados.append(CAMPOS_FORM_16.golsBrasil, golsBrasil);
     dados.append(CAMPOS_FORM_16.golsJapao, golsJapao);
 
-    fetch(GOOGLE_FORM_16_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: dados
-    })
-      .then(() => {
-        mensagem.textContent = "Palpite enviado com sucesso!";
-        mensagem.style.color = "#00ff88";
-        formPalpiteBrasil16.reset();
-      })
-      .catch(() => {
-        mensagem.textContent = "Erro ao enviar. Tente novamente.";
-        mensagem.style.color = "#ff6666";
+    try {
+      await fetch(GOOGLE_FORM_16_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: dados
       });
+
+      mensagem.textContent = "Palpite enviado com sucesso!";
+      mensagem.style.color = "#00ff88";
+      formPalpiteBrasil16.reset();
+    } catch (error) {
+      mensagem.textContent = "Erro ao enviar. Tente novamente.";
+      mensagem.style.color = "#ff6666";
+      console.error("Erro ao enviar palpite:", erro);
+    }
   });
 }
