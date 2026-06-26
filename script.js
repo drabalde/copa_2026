@@ -192,65 +192,7 @@ function buscarProximoJogo() {
   });
 }
 
-function atualizarContador() {
-  const proximoJogo = buscarProximoJogo();
-
-  if (!proximoJogo) {
-    document.getElementById("countdown-title").textContent =
-      "⏳ Aguardando o próximo jogo do Brasil";
-
-    document.getElementById("countdown-subtitle").textContent =
-      "O próximo confronto será atualizado em breve.";
-
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
-
-    return;
-  }
-
-  const agora = new Date();
-  const dataJogo = new Date(proximoJogo.data);
-  const diferenca = dataJogo - agora;
-
-  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-
-  const horas = Math.floor(
-    (diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-
-  const minutos = Math.floor(
-    (diferenca % (1000 * 60 * 60)) / (1000 * 60)
-  );
-
-  const segundos = Math.floor(
-    (diferenca % (1000 * 60)) / 1000
-  );
-
-  document.getElementById("countdown-title").textContent =
-    "⏳ Próximo jogo do Brasil";
-
-  document.getElementById("countdown-subtitle").textContent =
-    proximoJogo.titulo;
-
-  document.getElementById("days").textContent =
-    String(dias).padStart(2, "0");
-
-  document.getElementById("hours").textContent =
-    String(horas).padStart(2, "0");
-
-  document.getElementById("minutes").textContent =
-    String(minutos).padStart(2, "0");
-
-  document.getElementById("seconds").textContent =
-    String(segundos).padStart(2, "0");
-}
-
-atualizarContador();
-setInterval(atualizarContador, 1000);
-
-const BOLAO_API_URL = "https://script.google.com/macros/s/AKfycbyda6_wl4SnmNvy9HC6Eur0xfnTMyXycSYp9Hinlgl7YSCH72phWLZR6UHf1n5y-swLLQ/exec";
+const BOLAO_API_URL = "https://script.google.com/macros/s/hum ele/exec";
 
 async function carregarDadosBolao() {
   try {
