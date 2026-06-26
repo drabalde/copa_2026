@@ -42,15 +42,19 @@
     {
       "fase": "Primeira fase - 19/06 às 22h",
       "jogo": "Brasil x Haiti",
-      "resultado": "Palpites abertos",
-      "acertadores": []       
+      "resultado": "3 X 0",
+      "acertadores": [
+        "Diego","Rogério"
+      ]       
     },
 
     {
       "fase": "Primeira fase - 24/06 às 19h",
       "jogo": "Brasil x Escócia",
-      "resultado": "Palpites abertos",
-      "acertadores": []
+      "resultado": "3 X 0",
+      "acertadores": [
+        "Ti Mauro"
+      ]
     }
 
   ]
