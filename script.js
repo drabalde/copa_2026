@@ -367,3 +367,51 @@ function normalizarClasseGrupo(grupo) {
 
   return "grupo-gft";
 }
+
+
+const GOOGLE_FORM_16_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeqTLiRrAM5F0bDgqVtwcKInoMPe9iXmhmLgAU6bNu4E0isjg/formResponse";
+
+const CAMPOS_FORM_16 = {
+  nome: "entry.2005620554",
+  golsBrasil: "entry.346244626",
+  golsJapao: "entry.1227593723"
+};
+
+const formPalpiteBrasil16 = document.getElementById("formPalpiteBrasil16");
+
+if (formPalpiteBrasil16) {
+  formPalpiteBrasil16.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nomePalpite16").value.trim();
+    const golsBrasil = document.getElementById("golsBrasil16").value;
+    const golsJapao = document.getElementById("golsJapao16").value;
+    const mensagem = document.getElementById("mensagemPalpite16");
+
+    if (!nome || golsBrasil === "" || golsJapao === "") {
+      mensagem.textContent = "Preencha todos os campos antes de enviar.";
+      mensagem.style.color = "#ffdf00";
+      return;
+    }
+
+    const dados = new FormData();
+    dados.append(CAMPOS_FORM_16.nome, nome);
+    dados.append(CAMPOS_FORM_16.golsBrasil, golsBrasil);
+    dados.append(CAMPOS_FORM_16.golsJapao, golsJapao);
+
+    fetch(GOOGLE_FORM_16_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: dados
+    })
+      .then(() => {
+        mensagem.textContent = "Palpite enviado com sucesso!";
+        mensagem.style.color = "#00ff88";
+        formPalpiteBrasil16.reset();
+      })
+      .catch(() => {
+        mensagem.textContent = "Erro ao enviar. Tente novamente.";
+        mensagem.style.color = "#ff6666";
+      });
+  });
+}
