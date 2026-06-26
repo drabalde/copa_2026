@@ -56,19 +56,48 @@
 <section class="section palpites-matamata">
   <h2>🇧🇷 Palpite do próximo jogo do Brasil</h2>
 
-  <div class="matamata-card">
-    <span class="fase-jogo">16avos de final</span>
+  <div class="palpite-card-matamata">
+    <div class="palpite-info">
+      <span class="fase-jogo">16 avos de final</span>
+      <h3>Brasil x Japão</h3>
+      <p>Digite seu palpite para o próximo jogo do Brasil.</p>
+    </div>
 
+<<<<<<< HEAD
     <h3>Brasil x Japão</h3>
+=======
+    <form class="form-palpite-matamata">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nomeMatamata">Nome</label>
+          <input type="text" id="nomeMatamata" placeholder="Seu nome">
+        </div>
+>>>>>>> e13fe6d (arrumando card palpites 16 avos)
 
-    <p>
-      O Brasil já está classificado para o mata-mata.  
-      Agora é hora de enviar o palpite para o próximo jogo.
-    </p>
+        <div class="form-group">
+          <label for="grupoMatamata">Grupo</label>
+          <input type="text" id="grupoMatamata" placeholder="Família, amigos...">
+        </div>
+      </div>
 
-    <a href="LINK_DO_FORMULARIO" target="_blank" class="btn-palpite">
-      Enviar meu palpite
-    </a>
+      <div class="placar-palpite">
+        <div class="time-palpite">
+          <label>Brasil</label>
+          <input type="number" id="golsBrasilMatamata" min="0" placeholder="0">
+        </div>
+
+        <span class="versus">x</span>
+
+        <div class="time-palpite">
+          <label>Adversário</label>
+          <input type="number" id="golsAdversarioMatamata" min="0" placeholder="0">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-palpite">
+        Enviar palpite
+      </button>
+    </form>
   </div>
 </section>
 

@@ -684,25 +684,23 @@ footer{
   text-align: center;
 }
 
-.matamata-card {
-  background: #ffffff;
+.palpite-card-matamata {
+  background: linear-gradient(135deg, #009c3b, #002776);
+  color: white;
   border-radius: 18px;
   padding: 24px;
   margin-top: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  border-top: 6px solid #009c3b;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
-.matamata-card h3 {
-  font-size: 1.8rem;
-  color: #002776;
-  margin: 12px 0;
+.palpite-info h3 {
+  font-size: 1.7rem;
+  margin: 12px 0 8px;
 }
 
-.matamata-card p {
-  color: #444;
-  font-size: 1rem;
-  margin-bottom: 22px;
+.palpite-info p {
+  margin-bottom: 20px;
+  opacity: 0.95;
 }
 
 .fase-jogo {
@@ -710,23 +708,94 @@ footer{
   background: #ffdf00;
   color: #002776;
   font-weight: bold;
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.form-palpite-matamata {
+  margin-top: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.form-group {
+  flex: 1;
+  text-align: left;
+}
+
+.form-group label,
+.time-palpite label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.time-palpite input {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.placar-palpite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 22px;
+}
+
+.time-palpite {
+  width: 120px;
+}
+
+.time-palpite input {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.versus {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffdf00;
+  margin-top: 22px;
 }
 
 .btn-palpite {
-  display: inline-block;
-  background: #009c3b;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 12px 22px;
+  background: #ffdf00;
+  color: #002776;
+  border: none;
+  padding: 12px 24px;
   border-radius: 999px;
-  transition: 0.2s;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .btn-palpite:hover {
-  background: #007a2f;
   transform: scale(1.03);
+  background: #ffd000;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .placar-palpite {
+    gap: 8px;
+  }
+
+  .time-palpite {
+    width: 100px;
+  }
 }
