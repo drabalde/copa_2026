@@ -35,7 +35,7 @@
       "jogo": "Brasil x Marrocos",
       "resultado": "1 X 1",
       "acertadores": [
-        "Marcus","Serginho","Arthur Baldo"
+        "Marcus Reis","Serginho"
       ]
     },
 
@@ -44,7 +44,7 @@
       "jogo": "Brasil x Haiti",
       "resultado": "3 X 0",
       "acertadores": [
-        "Diego","Rogério"
+        "Diego GPT","Rogério"
       ]       
     },
 
@@ -62,6 +62,7 @@
       "jogo": "Brasil x Japão",
       "resultado": "Palpites abertos",
       "acertadores": [   
+        "Diego GPT","Arthur Baldo"
       ]
     }
 
