@@ -200,6 +200,8 @@ async function carregarDadosBolao() {
     const resposta = await fetch(BOLAO_API_URL);
     const dados = await resposta.json();
 
+    renderizarArtilheiros(dados.artilheiros);
+
     preencherUltimoJogoBrasil(dados.ultimoJogoBrasil);
     preencherRanking(dados.ranking);
     preencherAtualizacao(dados.atualizadoEm);
@@ -353,4 +355,34 @@ async function enviarPalpiteBrasil16(event) {
   }
 
   return false;
+}
+
+function renderizarArtilheiros(artilheiros) {
+  const tbody = document.getElementById("tabela-artilheiros");
+
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+
+  if (!artilheiros || artilheiros.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="4">Ranking de artilheiros ainda não disponível.</td>
+      </tr>
+    `;
+    return;
+  }
+
+  artilheiros.forEach(item => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${item.posicao}</td>
+      <td>${item.jogador}</td>
+      <td>${item.selecao}</td>
+      <td><strong>${item.gols}</strong></td>
+    `;
+
+    tbody.appendChild(tr);
+  });
 }

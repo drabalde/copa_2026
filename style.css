@@ -911,3 +911,26 @@ footer{
     padding: 18px;
   }
 }
+
+
+#tabela-artilheiros td:nth-child(1),
+#tabela-artilheiros td:nth-child(4) {
+  text-align: center;
+  font-weight: bold;
+}
+
+#tabela-artilheiros td:nth-child(2) {
+  font-weight: 600;
+}
+
+#tabela-artilheiros tr:nth-child(1) {
+  background: rgba(255, 215, 0, 0.18);
+}
+
+#tabela-artilheiros tr:nth-child(2) {
+  background: rgba(192, 192, 192, 0.16);
+}
+
+#tabela-artilheiros tr:nth-child(3) {
+  background: rgba(205, 127, 50, 0.16);
+}
