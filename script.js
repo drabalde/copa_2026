@@ -200,11 +200,10 @@ async function carregarDadosBolao() {
     const resposta = await fetch(BOLAO_API_URL);
     const dados = await resposta.json();
 
-    renderizarArtilheiros(dados.artilheiros);
-
     preencherUltimoJogoBrasil(dados.ultimoJogoBrasil);
     preencherRanking(dados.ranking);
     preencherAtualizacao(dados.atualizadoEm);
+    
   } catch (erro) {
     console.error("Erro ao carregar dados do bolão:", erro);
 
