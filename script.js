@@ -358,9 +358,17 @@ async function enviarPalpiteBrasil16(event) {
 }
 
 function renderizarArtilheiros(artilheiros) {
+  console.log("Entrou em renderizarArtilheiros");
+  console.log("Valor recebido:", artilheiros);
+  console.log("É array?", Array.isArray(artilheiros));
+  console.log("Quantidade:", artilheiros ? artilheiros.length : "sem valor")
+
   const tbody = document.getElementById("tabela-artilheiros");
 
-  if (!tbody) return;
+  if (!tbody) {
+    console.error("Elemento tabela-artilheiros não encontrado no HTML");
+    return;
+  }
 
   tbody.innerHTML = "";
 
