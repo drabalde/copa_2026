@@ -203,6 +203,7 @@ async function carregarDadosBolao() {
     preencherUltimoJogoBrasil(dados.ultimoJogoBrasil);
     preencherRanking(dados.ranking);
     preencherAtualizacao(dados.atualizadoEm);
+    renderizarPalpitesExtras(dados.palpitesExtras);
     
   } catch (erro) {
     console.error("Erro ao carregar dados do bolão:", erro);
@@ -388,6 +389,37 @@ function renderizarArtilheiros(artilheiros) {
       <td>${item.jogador}</td>
       <td>${item.selecao}</td>
       <td><strong>${item.gols}</strong></td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+function renderizarPalpitesExtras(palpitesExtras) {
+  const tbody = document.getElementById("tabela-palpites-extras");
+
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+
+  if (!palpitesExtras || palpitesExtras.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5">Palpites especiais ainda não disponíveis.</td>
+      </tr>
+    `;
+    return;
+  }
+
+  palpitesExtras.forEach(item => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${item.nome || "-"}</td>
+      <td>${item.campeao || "-"}</td>
+      <td>${item.vice || "-"}</td>
+      <td>${item.artilheiro || "-"}</td>
+      <td>${item.goleiro || "-"}</td>
     `;
 
     tbody.appendChild(tr);

@@ -934,3 +934,22 @@ footer{
 #tabela-artilheiros tr:nth-child(3) {
   background: rgba(205, 127, 50, 0.16);
 }
+
+
+.compact-table th,
+.compact-table td {
+  font-size: 0.85rem;
+  padding: 8px 6px;
+}
+
+.compact-table td {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .compact-table th,
+  .compact-table td {
+    font-size: 0.75rem;
+    padding: 6px 4px;
+  }
+}
