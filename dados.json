@@ -75,6 +75,85 @@
       ]
     }
 
+  ],
 
-  ]
+  "palpitesExtras": [
+  {
+    "nome": "Diego Rabaldelli",
+    "campeao": "Argentina",
+    "vice": "Espanha",
+    "artilheiro": "Julián Álvarez",
+    "goleiro": "Emiliano Martínez"
+  },
+  {
+    "nome": "Diego GPT",
+    "campeao": "Espanha",
+    "vice": "Argentina",
+    "artilheiro": "Harry Kane",
+    "goleiro": "Unai Simón"
+  },
+  {
+    "nome": "Sergio Oliveira",
+    "campeao": "Espanha",
+    "vice": "Portugal",
+    "artilheiro": "Oyarzabal",
+    "goleiro": "Diogo Costa"
+  },
+  {
+    "nome": "Juliano Sant Anna",
+    "campeao": "Brasil",
+    "vice": "Espanha",
+    "artilheiro": "Mbappe",
+    "goleiro": "David Raya"
+  },
+  {
+    "nome": "Ti Mauro",
+    "campeao": "Brasil",
+    "vice": "Espanha",
+    "artilheiro": "Vini Jr",
+    "goleiro": "Unai Simón"
+  },
+  {
+    "nome": "Gabriel",
+    "campeao": "Portugal",
+    "vice": "Espanha",
+    "artilheiro": "Cristiano Ronaldo",
+    "goleiro": "Emiliano Martínez"
+  },
+  {
+    "nome": "Zana",
+    "campeao": "Brasil",
+    "vice": "Argentina",
+    "artilheiro": "Messi",
+    "goleiro": "Emiliano Martínez"
+  },
+  {
+    "nome": "Túlio",
+    "campeao": "França",
+    "vice": "Inglaterra",
+    "artilheiro": "Messi",
+    "goleiro": "Mike Maignan"
+  },
+  {
+    "nome": "Marcus Reis",
+    "campeao": "França",
+    "vice": "Brasil",
+    "artilheiro": "Harry Kane",
+    "goleiro": "Diogo Costa"
+  },
+  {
+    "nome": "Arthur Baldo",
+    "campeao": "Brasil",
+    "vice": "Portugal",
+    "artilheiro": "Endrik",
+    "goleiro": "Diogo Costa"
+  },
+  {
+    "nome": "Anderson Thiago",
+    "campeao": "Espanha",
+    "vice": "Portugal",
+    "artilheiro": "Cristiano Ronaldo",
+    "goleiro": "Emiliano Martínez"
+  }
+]
 }
