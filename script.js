@@ -203,7 +203,7 @@ async function carregarDadosBolao() {
     preencherUltimoJogoBrasil(dados.ultimoJogoBrasil);
     preencherRanking(dados.ranking);
     preencherAtualizacao(dados.atualizadoEm);
-    renderizarPalpitesExtras(dados.palpitesExtras);
+    
     
   } catch (erro) {
     console.error("Erro ao carregar dados do bolão:", erro);
@@ -297,6 +297,8 @@ function preencherAtualizacao(dataIso) {
 }
 
 carregarDadosBolao();
+carregarPalpitesExtras();
+
 
 setInterval(carregarDadosBolao, 10 * 60 * 1000);
 
@@ -357,42 +359,28 @@ async function enviarPalpiteBrasil16(event) {
   return false;
 }
 
-function renderizarArtilheiros(artilheiros) {
-  console.log("Entrou em renderizarArtilheiros");
-  console.log("Valor recebido:", artilheiros);
-  console.log("É array?", Array.isArray(artilheiros));
-  console.log("Quantidade:", artilheiros ? artilheiros.length : "sem valor")
+async function carregarPalpitesExtras() {
+  try {
+    const resposta = await fetch("dados.json?v=" + Date.now());
+    const dados = await resposta.json();
 
-  const tbody = document.getElementById("tabela-artilheiros");
+    console.log("Dados do dados.json:", dados);
+    console.log("Palpites extras:", dados.palpitesExtras);
 
-  if (!tbody) {
-    console.error("Elemento tabela-artilheiros não encontrado no HTML");
-    return;
+    renderizarPalpitesExtras(dados.palpitesExtras);
+
+  } catch (erro) {
+    console.error("Erro ao carregar palpites extras:", erro);
+
+    const tbody = document.getElementById("tabela-palpites-extras");
+    if (tbody) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="5">Não foi possível carregar os palpites especiais.</td>
+        </tr>
+      `;
+    }
   }
-
-  tbody.innerHTML = "";
-
-  if (!artilheiros || artilheiros.length === 0) {
-    tbody.innerHTML = `
-      <tr>
-        <td colspan="4">Ranking de artilheiros ainda não disponível.</td>
-      </tr>
-    `;
-    return;
-  }
-
-  artilheiros.forEach(item => {
-    const tr = document.createElement("tr");
-
-    tr.innerHTML = `
-      <td>${item.posicao}</td>
-      <td>${item.jogador}</td>
-      <td>${item.selecao}</td>
-      <td><strong>${item.gols}</strong></td>
-    `;
-
-    tbody.appendChild(tr);
-  });
 }
 
 function renderizarPalpitesExtras(palpitesExtras) {
